@@ -21,28 +21,32 @@ app.post("/sign-up", (req, res) => {
     email: req.body.email,
     session: session,
   };
-  console.log(body)
   db.push(body);
-
   res.status(200).json(body);
 });
 
 //認証してみよう
 app.get("/login", (req, res) => {
-  user = {username: res.body.username, email: req.body.email, session: req.body.session}
+  // 順番
+  user = {
+    username: req.body.username,
+    email: req.body.email,
+    session: req.body.session,
+  };
   // 本当はdbに接続、検索
   check = false;
-  db.forEach(element => {
-    if(JSON.stringify(element) === JSON.stringify()) {
+  db.forEach((element) => {
+    if (JSON.stringify(element) === JSON.stringify(user)) {
       check = true;
     }
   });
-  if(!check) {
+  if (!check) {
     res.status(403).json({
       msg: "承認に失敗しました",
     });
+  } else {
+    res.status(200).json({
+      msg: "承認に成功しました",
+    });
   }
-  res.status(200).json({
-    msg: "承認に成功しました",
-  });
 });

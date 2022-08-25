@@ -4,7 +4,7 @@ const envVariables = dotenv.config().parsed;
 const { CurlGenerator } = require("curl-generator");
 const { exec } = require("child_process");
 
-const requestInfo = { url: "", method: "", body: {}, headers: {} };
+const requestInfo = { url: "", method: "", body: {}, headers: {"Content-type": "application/json; charset=UTF-8"} };
 (async () => {
   let question = {
     type: "input",
