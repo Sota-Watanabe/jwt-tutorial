@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "どこへやるか？→ファイル確認 メソッドは→GET/POST ヘッダーは→ファイル確認 bodyは？→ファイル確認 このようなリクエストなげるおｋ？",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "curl-generator": "^0.2.0",
+    "dotenv": "^16.0.1",
+    "enquirer": "^2.3.6"
+  }
+}
