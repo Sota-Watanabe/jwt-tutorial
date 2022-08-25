@@ -10,8 +10,7 @@ app.use(express.json());
 
 app.listen(PORT, console.log("server running"));
 
-//ログイン
-app.post("/login", (req, res) => {
+app.post("/sign-up", (req, res) => {
   const payload = {
     username: req.body.username,
     email: req.body.email,
@@ -29,7 +28,7 @@ app.post("/login", (req, res) => {
 });
 
 //認証してみよう
-app.get("/test", auth, (req, res) => {
+app.get("/login", auth, (req, res) => {
   res.status(200).json({
     msg: "承認に成功しました",
   });
