@@ -53,7 +53,6 @@ const requestInfo = { url: "", method: "", body: {}, headers: {} };
     (key) =>
       Object.keys(requestInfo[key]).length === 0 && delete requestInfo[key]
   );
-
   const curlSnippet = CurlGenerator(requestInfo);
   console.log(`コマンドを作成しました。\n${curlSnippet}`)
   question = {
